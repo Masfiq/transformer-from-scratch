@@ -1,0 +1,515 @@
+python: 3.10.11
+2.3.0+cpu
+0.18.0+cpu
+False
+Vocab size: 7069
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.1.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "D:\BABU\DOWNLOADS\NLP_PA5\attention_mechanism.py", line 467, in <module>
+    main()
+  File "D:\BABU\DOWNLOADS\NLP_PA5\attention_mechanism.py", line 428, in main
+    model.build_model()
+  File "D:\BABU\DOWNLOADS\NLP_PA5\attention_mechanism.py", line 64, in build_model
+    self.enc = Encoder(self.INPUT_DIM,
+  File "D:\BABU\DOWNLOADS\NLP_PA5\encoder.py", line 20, in __init__
+    self.tok_embedding = nn.Embedding(input_dim, hid_dim)
+  File "C:\Users\Gadget 360 Degree\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\sparse.py", line 145, in __init__
+    self.reset_parameters()
+  File "C:\Users\Gadget 360 Degree\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\sparse.py", line 154, in reset_parameters
+    init.normal_(self.weight)
+  File "C:\Users\Gadget 360 Degree\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\init.py", line 175, in normal_
+    return _no_grad_normal_(tensor, mean, std, generator)
+  File "C:\Users\Gadget 360 Degree\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\init.py", line 20, in _no_grad_normal_
+    return tensor.normal_(mean, std, generator=generator)
+C:\Users\Gadget 360 Degree\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\init.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ..\torch\csrc\utils\tensor_numpy.cpp:84.)
+  return tensor.normal_(mean, std, generator=generator)
+The model has 9,492,125 trainable parameters
+Number of minibatches: 3
+Epoch: 01
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.5494892597198486
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.5494892597198486
+Word 'Homarus' (1,1) vs random word 'up' (1,112) -> 0.6289228200912476
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.5658659338951111
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.5658659338951111
+Word 'gammarus' (1,2) vs random word 'and' (1,29) -> 0.9608209729194641
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9562969207763672
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.9054985642433167
+Word 'known' (1,4) vs random word 'Homarus' (1,1) -> 0.9677988290786743
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9517887234687805
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9303499460220337
+Word 'as' (1,5) vs random word 'eastern' (1,23) -> 0.9576900005340576
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9594337344169617
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9594337344169617
+Word 'the' (1,6) vs random word 'lobster' (1,8) -> 0.9569004774093628
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9253237247467041
+Word 'European' (1,7) vs random word 'from' (1,21) -> 0.9711546301841736
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.9588730335235596
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.9588730335235596
+Word 'lobster' (1,8) vs random word 'Ocean' (1,25) -> 0.965878427028656
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9620402455329895
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.9238327145576477
+Word 'or' (1,9) vs random word '"' (1,90) -> 0.5716943144798279
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9729562997817993
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9329203963279724
+Word 'common' (1,10) vs random word ')' (1,60) -> 0.9676288366317749
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9683703780174255
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9683703780174255
+Word 'is' (1,13) vs random word 'known' (1,4) -> 0.9581735730171204
+        Time: 2m 32s
+        Train Loss: 0.1499 | Train PPL:  1.1617
+         Val. Loss: 0.1499 |  Val. PPL:  1.1617
+Epoch: 02
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.5438529253005981
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.5438529253005981
+Word 'Homarus' (1,1) vs random word 'European' (1,7) -> 0.9718057513237
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.5134273171424866
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.5134273171424866
+Word 'gammarus' (1,2) vs random word 'known' (1,4) -> 0.9696407914161682
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9510455131530762
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.8962505459785461
+Word 'known' (1,4) vs random word 'only' (1,88) -> 0.4905305504798889
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9438459277153015
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9212228059768677
+Word 'as' (1,5) vs random word '.' (1,123) -> 0.5753633379936218
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9588187336921692
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9588187336921692
+Word 'the' (1,6) vs random word 'into' (1,118) -> 0.4739488363265991
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9217914342880249
+Word 'European' (1,7) vs random word 'closely' (1,38) -> 0.9594808220863342
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.9613465070724487
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.9613465070724487
+Word 'lobster' (1,8) vs random word 'eastern' (1,23) -> 0.9471765160560608
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9521223306655884
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.9211220741271973
+Word 'or' (1,9) vs random word 'americanus' (1,46) -> 0.9475749731063843
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9712216854095459
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9285001754760742
+Word 'common' (1,10) vs random word 'and' (1,29) -> 0.9496744871139526
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9663493037223816
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9663493037223816
+Word 'is' (1,13) vs random word ',' (1,3) -> 0.9633392691612244
+        Time: 2m 44s
+        Train Loss: 0.1499 | Train PPL:  1.1617
+         Val. Loss: 0.1499 |  Val. PPL:  1.1617
+Epoch: 03
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.6090074777603149
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.6090074777603149
+Word 'Homarus' (1,1) vs random word 'highly' (1,128) -> 0.6067121624946594
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.6522637605667114
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.6522637605667114
+Word 'gammarus' (1,2) vs random word 'Homarus' (1,124) -> 0.6369677186012268
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9622924327850342
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.921017587184906
+Word 'known' (1,4) vs random word 'mass' (1,63) -> 0.9699316024780273
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9568603038787842
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9298656582832336
+Word 'as' (1,5) vs random word 'of' (1,16) -> 0.9623938202857971
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9661535620689392
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9661535620689392
+Word 'the' (1,6) vs random word 'pots' (1,138) -> 0.6538532376289368
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9480628371238708
+Word 'European' (1,7) vs random word '<' (1,119) -> 0.5915339589118958
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.9697016477584839
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.9697016477584839
+Word 'lobster' (1,8) vs random word '<' (1,17) -> 0.9704595804214478
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9581490755081177
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.930088222026825
+Word 'or' (1,9) vs random word 'the' (1,22) -> 0.9666438698768616
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9769617915153503
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9448320269584656
+Word 'common' (1,10) vs random word ',' (1,131) -> 0.6056534647941589
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9710682034492493
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9710682034492493
+Word 'is' (1,13) vs random word 'lobster' (1,11) -> 0.9737437963485718
+        Time: 2m 39s
+        Train Loss: 0.1499 | Train PPL:  1.1617
+         Val. Loss: 0.1499 |  Val. PPL:  1.1617
+Epoch: 04
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.6661877036094666
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.6661877036094666
+Word 'Homarus' (1,1) vs random word 'lb' (1,69) -> 0.6526457667350769
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.6838134527206421
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.6838134527206421
+Word 'gammarus' (1,2) vs random word 'the' (1,142) -> 0.6771625876426697
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9627478718757629
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.9265236258506775
+Word 'known' (1,4) vs random word 'of' (1,16) -> 0.9744155406951904
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9610862135887146
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9423784613609314
+Word 'as' (1,5) vs random word 'of' (1,77) -> 0.5376613140106201
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9717063307762146
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9717063307762146
+Word 'the' (1,6) vs random word '.' (1,123) -> 0.6777675747871399
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.945960283279419
+Word 'European' (1,7) vs random word '"' (1,90) -> 0.6912840008735657
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.9728982448577881
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.9728982448577881
+Word 'lobster' (1,8) vs random word '13' (1,68) -> 0.6759968400001526
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.966900110244751
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.9440076947212219
+Word 'or' (1,9) vs random word 'mass' (1,63) -> 0.9731998443603516
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9787948131561279
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9582099318504333
+Word 'common' (1,10) vs random word 'to' (1,51) -> 0.9709631204605103
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.973401665687561
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.973401665687561
+Word 'is' (1,13) vs random word 'before' (1,116) -> 0.6458139419555664
+        Time: 2m 33s
+        Train Loss: 0.1498 | Train PPL:  1.1617
+         Val. Loss: 0.1498 |  Val. PPL:  1.1616
+Epoch: 05
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.7049835920333862
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.7049835920333862
+Word 'Homarus' (1,1) vs random word 'caught' (1,135) -> 0.7523209452629089
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.7393249273300171
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.7393249273300171
+Word 'gammarus' (1,2) vs random word 'known' (1,4) -> 0.9804853200912476
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9716231226921082
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.9408013224601746
+Word 'known' (1,4) vs random word 'food' (1,130) -> 0.5584495663642883
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9698812961578369
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9509362578392029
+Word 'as' (1,5) vs random word 'unk' (1,18) -> 0.9708876013755798
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.976718008518219
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.976718008518219
+Word 'the' (1,6) vs random word 'Homarus' (1,1) -> 0.9839483499526978
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9638468027114868
+Word 'European' (1,7) vs random word 'are' (1,85) -> 0.6674240231513977
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.976750910282135
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.976750910282135
+Word 'lobster' (1,8) vs random word 'It' (1,36) -> 0.9807030558586121
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9709447622299194
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.952974259853363
+Word 'or' (1,9) vs random word '>' (1,121) -> 0.7313745021820068
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9835062026977539
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9603852033615112
+Word 'common' (1,10) vs random word '.' (1,96) -> 0.7325884103775024
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9784926176071167
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9784926176071167
+Word 'is' (1,13) vs random word 'American' (1,42) -> 0.97670978307724
+        Time: 2m 34s
+        Train Loss: 0.1498 | Train PPL:  1.1616
+         Val. Loss: 0.1498 |  Val. PPL:  1.1615
+Epoch: 06
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.5866150856018066
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.5866150856018066
+Word 'Homarus' (1,1) vs random word 'is' (1,13) -> 0.982514500617981
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.7747820615768433
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.7747820615768433
+Word 'gammarus' (1,2) vs random word '>' (1,19) -> 0.9770386815071106
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9754055738449097
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.9535086750984192
+Word 'known' (1,4) vs random word 'a' (1,127) -> 0.5845431685447693
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9747543334960938
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9610084295272827
+Word 'as' (1,5) vs random word 'the' (1,41) -> 0.975974440574646
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9798038005828857
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9798038005828857
+Word 'the' (1,6) vs random word '>' (1,19) -> 0.9823729395866394
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9656420350074768
+Word 'European' (1,7) vs random word 'the' (1,142) -> 0.767696738243103
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.9793440103530884
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.9793440103530884
+Word 'lobster' (1,8) vs random word '60' (1,55) -> 0.9749115109443665
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9724212288856506
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.9629905819892883
+Word 'or' (1,9) vs random word 'It' (1,36) -> 0.9771561026573181
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9858515858650208
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9647256135940552
+Word 'common' (1,10) vs random word 'the' (1,6) -> 0.9783076643943787
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9815921187400818
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9815921187400818
+Word 'is' (1,13) vs random word 'only' (1,88) -> 0.8054357171058655
+        Time: 2m 33s
+        Train Loss: 0.1497 | Train PPL:  1.1615
+         Val. Loss: 0.1496 |  Val. PPL:  1.1614
+Epoch: 07
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.7852457761764526
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.7852457761764526
+Word 'Homarus' (1,1) vs random word 'Sea' (1,28) -> 0.9863844513893127
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.8010961413383484
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.8010961413383484
+Word 'gammarus' (1,2) vs random word 'caught' (1,135) -> 0.8212350606918335
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9787907004356384
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.9593457579612732
+Word 'known' (1,4) vs random word 'It' (1,36) -> 0.9776074290275574
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9770357608795166
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9653441309928894
+Word 'as' (1,5) vs random word 'claws' (1,78) -> 0.825822651386261
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9825511574745178
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9825511574745178
+Word 'the' (1,6) vs random word 'before' (1,116) -> 0.7943033576011658
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9663906097412109
+Word 'European' (1,7) vs random word 'common' (1,10) -> 0.9839174747467041
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.9813514351844788
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.9813514351844788
+Word 'lobster' (1,8) vs random word 'are' (1,106) -> 0.6272367835044861
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9776051640510559
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.9692986011505127
+Word 'or' (1,9) vs random word ')' (1,70) -> 0.7628205418586731
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9878160357475281
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9720609784126282
+Word 'common' (1,10) vs random word 'common' (1,10) -> 1.0
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9849868416786194
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9849868416786194
+Word 'is' (1,13) vs random word 'H.' (1,45) -> 0.9859924912452698
+        Time: 2m 34s
+        Train Loss: 0.1496 | Train PPL:  1.1614
+         Val. Loss: 0.1494 |  Val. PPL:  1.1612
+Epoch: 08
+        Minibatch 0
+        Minibatch 1
+        Minibatch 2
+
+---- VALIDATION EMBEDDING ANALYSIS ----
+Focus words: ['Homarus', 'gammarus', 'known', 'as', 'the', 'European', 'lobster', 'or', 'common', 'is']
+
+
+=== WORD: Homarus ===
+Same sentence: 'Homarus' at (1,1) vs (1,124) -> 0.8261727690696716
+Different sentences: 'Homarus' at (1,1) vs (1,124) -> 0.8261727690696716
+Word 'Homarus' (1,1) vs random word 'lb' (1,69) -> 0.8157185316085815
+
+=== WORD: gammarus ===
+Same sentence: 'gammarus' at (1,2) vs (1,125) -> 0.8376671075820923
+Different sentences: 'gammarus' at (1,2) vs (1,125) -> 0.8376671075820923
+Word 'gammarus' (1,2) vs random word 'related' (1,39) -> 0.9837934970855713
+
+=== WORD: known ===
+Same sentence: 'known' at (10,80) vs (10,85) -> 0.9819138646125793
+Different sentences: 'known' at (1,4) vs (10,80) -> 0.9642215371131897
+Word 'known' (1,4) vs random word 'pair' (1,76) -> 0.8545628786087036
+
+=== WORD: as ===
+Same sentence: 'as' at (25,5) vs (25,16) -> 0.9818955063819885
+Different sentences: 'as' at (1,5) vs (12,55) -> 0.9741494059562683
+Word 'as' (1,5) vs random word 'related' (1,39) -> 0.9834138751029968
+
+=== WORD: the ===
+Same sentence: 'the' at (1,6) vs (1,22) -> 0.9859088659286499
+Different sentences: 'the' at (1,6) vs (1,22) -> 0.9859088659286499
+Word 'the' (1,6) vs random word 'into' (1,118) -> 0.818824827671051
+
+=== WORD: European ===
+Different sentences: 'European' at (1,7) vs (13,15) -> 0.9751975536346436
+Word 'European' (1,7) vs random word 'common' (1,10) -> 0.9867305159568787
+
+=== WORD: lobster ===
+Same sentence: 'lobster' at (1,8) vs (1,11) -> 0.983675479888916
+Different sentences: 'lobster' at (1,8) vs (1,11) -> 0.983675479888916
+Word 'lobster' (1,8) vs random word 'Isles' (1,144) -> 0.8445600867271423
+
+=== WORD: or ===
+Same sentence: 'or' at (7,11) vs (7,23) -> 0.9806960821151733
+Different sentences: 'or' at (1,9) vs (3,60) -> 0.9728454351425171
+Word 'or' (1,9) vs random word 'occurs' (1,98) -> 0.8107771873474121
+
+=== WORD: common ===
+Same sentence: 'common' at (23,2) vs (23,30) -> 0.9903208017349243
+Different sentences: 'common' at (1,10) vs (23,2) -> 0.9796723127365112
+Word 'common' (1,10) vs random word 'becoming' (1,89) -> 0.834567666053772
+
+=== WORD: is ===
+Same sentence: 'is' at (1,13) vs (1,37) -> 0.9870285987854004
+Different sentences: 'is' at (1,13) vs (1,37) -> 0.9870285987854004
+Word 'is' (1,13) vs random word 'is' (1,126) -> 0.8427971601486206
+        Time: 2m 34s
+        Train Loss: 0.1494 | Train PPL:  1.1611
+         Val. Loss: 0.1491 |  Val. PPL:  1.1608
